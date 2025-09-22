@@ -1,0 +1,21 @@
+{
+  "name": "AHC BLOOD FINDER WEBSITE",
+  "short_name": "AHC BLOOD APP",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://i.imgur.com/x8Go2ZI.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.imgur.com/RocpY45.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
