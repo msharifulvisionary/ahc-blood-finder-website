@@ -12,7 +12,473 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
       
           <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-      
+<!-- finding -->
+     <style>
+        /* Finding Section Styles */
+        .finding-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .finding-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .finding-title {
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .finding-subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+        }
+
+        .finding-search-box {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .finding-search-title {
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .finding-blood-groups {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .finding-blood-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(238, 90, 36, 0.3);
+        }
+
+        .finding-blood-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(238, 90, 36, 0.4);
+        }
+
+        .finding-blood-btn.active {
+            background: linear-gradient(135deg, #00b894, #00a085);
+            box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
+        }
+
+        .finding-results {
+            margin-top: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .finding-results.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .finding-result-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .finding-result-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid;
+        }
+
+        .finding-can-donate {
+            border-left-color: #00b894;
+        }
+
+        .finding-can-receive {
+            border-left-color: #0984e3;
+        }
+
+        .finding-result-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .finding-donate-title {
+            color: #00b894;
+        }
+
+        .finding-receive-title {
+            color: #0984e3;
+        }
+
+        .finding-blood-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .finding-blood-item {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 3px 10px rgba(232, 67, 147, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .finding-donate-item {
+            background: linear-gradient(135deg, #00b894, #00a085);
+            box-shadow: 0 3px 10px rgba(0, 184, 148, 0.3);
+        }
+
+        .finding-receive-item {
+            background: linear-gradient(135deg, #0984e3, #2d3436);
+            box-shadow: 0 3px 10px rgba(9, 132, 227, 0.3);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .finding-compatibility-chart {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .finding-chart-title {
+            color: #333;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .finding-chart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .finding-chart-table th,
+        .finding-chart-table td {
+            padding: 12px;
+            text-align: center;
+            border: 2px solid #f0f0f0;
+            font-weight: bold;
+        }
+
+        .finding-chart-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .finding-chart-table td {
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .finding-chart-table td:hover {
+            background: #e9ecef;
+            transform: scale(1.05);
+        }
+
+        .finding-compatible {
+            background: linear-gradient(135deg, #00b894, #00a085) !important;
+            color: white;
+        }
+
+        .finding-icon {
+            font-size: 1.5rem;
+            margin-right: 8px;
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            .finding-section {
+                padding: 40px 15px;
+            }
+            
+            .finding-title {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+                line-height: 1.3;
+            }
+            
+            .finding-subtitle {
+                font-size: 1rem;
+                margin-bottom: 30px;
+                line-height: 1.5;
+            }
+            
+            .finding-search-box {
+                padding: 20px 15px;
+                border-radius: 12px;
+                margin-bottom: 30px;
+            }
+            
+            .finding-search-title {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+            }
+            
+            .finding-blood-groups {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                margin-bottom: 25px;
+            }
+            
+            .finding-blood-btn {
+                padding: 12px 15px;
+                font-size: 1.1rem;
+                border-radius: 40px;
+            }
+            
+            .finding-result-cards {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .finding-result-card {
+                padding: 20px 15px;
+                border-radius: 12px;
+            }
+            
+            .finding-result-title {
+                font-size: 1.1rem;
+                margin-bottom: 12px;
+            }
+            
+            .finding-blood-list {
+                gap: 8px;
+            }
+            
+            .finding-blood-item {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+                border-radius: 20px;
+            }
+            
+            .finding-compatibility-chart {
+                padding: 20px 15px;
+                border-radius: 12px;
+                margin-top: 30px;
+            }
+            
+            .finding-chart-title {
+                font-size: 1.4rem;
+                margin-bottom: 20px;
+                line-height: 1.3;
+            }
+            
+            .finding-chart-table {
+                font-size: 0.8rem;
+                min-width: 500px;
+            }
+            
+            .finding-chart-table th,
+            .finding-chart-table td {
+                padding: 6px 4px;
+                font-size: 0.75rem;
+            }
+            
+            .finding-chart-table th {
+                font-size: 0.8rem;
+            }
+            
+            .finding-icon {
+                font-size: 1.2rem;
+                margin-right: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .finding-title {
+                font-size: 1.5rem;
+            }
+            
+            .finding-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .finding-search-box {
+                padding: 15px 10px;
+            }
+            
+            .finding-search-title {
+                font-size: 1.1rem;
+            }
+            
+            .finding-blood-groups {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            
+            .finding-blood-btn {
+                padding: 10px 12px;
+                font-size: 1rem;
+            }
+            
+            .finding-result-card {
+                padding: 15px 10px;
+            }
+            
+            .finding-result-title {
+                font-size: 1rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .finding-blood-item {
+                padding: 5px 10px;
+                font-size: 0.85rem;
+            }
+            
+            .finding-compatibility-chart {
+                padding: 15px 10px;
+            }
+            
+            .finding-chart-title {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+            }
+            
+            .finding-chart-table {
+                font-size: 0.7rem;
+                min-width: 450px;
+            }
+            
+            .finding-chart-table th,
+            .finding-chart-table td {
+                padding: 4px 2px;
+                font-size: 0.65rem;
+            }
+            
+            .finding-chart-table th {
+                font-size: 0.7rem;
+                padding: 6px 4px;
+            }
+        }
+
+        /* Extra Small Devices */
+        @media (max-width: 360px) {
+            .finding-section {
+                padding: 30px 10px;
+            }
+            
+            .finding-title {
+                font-size: 1.3rem;
+            }
+            
+            .finding-subtitle {
+                font-size: 0.85rem;
+                padding: 0 5px;
+            }
+            
+            .finding-search-box {
+                padding: 12px 8px;
+            }
+            
+            .finding-blood-groups {
+                gap: 8px;
+            }
+            
+            .finding-blood-btn {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+            }
+            
+            .finding-chart-table {
+                min-width: 320px;
+                font-size: 0.6rem;
+            }
+            
+            .finding-chart-table th,
+            .finding-chart-table td {
+                padding: 3px 1px;
+                font-size: 0.6rem;
+            }
+            
+            .finding-chart-table th {
+                font-size: 0.65rem;
+                padding: 4px 2px;
+            }
+        }
+
+        /* Landscape Mobile */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .finding-section {
+                padding: 20px 15px;
+            }
+            
+            .finding-title {
+                font-size: 1.6rem;
+                margin-bottom: 10px;
+            }
+            
+            .finding-subtitle {
+                margin-bottom: 20px;
+            }
+            
+            .finding-search-box {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .finding-blood-groups {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+            }
+            
+            .finding-blood-btn {
+                padding: 8px 12px;
+                font-size: 0.95rem;
+            }
+            
+            .finding-compatibility-chart {
+                margin-top: 20px;
+                padding: 15px;
+            }
+        }
+    </style> 
+
+    
      <!-- welcome -->
 <style>
   /* Welcome Overlay Styles */
@@ -2051,6 +2517,160 @@ position: relative;
         </div>
     </div>
 </section>
+        <!-- finding -->
+            <section class="finding-section">
+        <div class="finding-container">
+            <h2 class="finding-title">রক্তের গ্রুপ সামঞ্জস্যতা</h2>
+            <p class="finding-subtitle">আপনার রক্তের গ্রুপ নির্বাচন করুন এবং দেখুন কাকে রক্তদান করতে পারবেন বা কার কাছ থেকে রক্ত নিতে পারবেন</p>
+            
+            <!-- Search Box -->
+            <div class="finding-search-box">
+                <h3 class="finding-search-title">🩸 আপনার রক্তের গ্রুপ নির্বাচন করুন</h3>
+                <div class="finding-blood-groups">
+                    <button class="finding-blood-btn" data-blood="A+">A+</button>
+                    <button class="finding-blood-btn" data-blood="A-">A-</button>
+                    <button class="finding-blood-btn" data-blood="B+">B+</button>
+                    <button class="finding-blood-btn" data-blood="B-">B-</button>
+                    <button class="finding-blood-btn" data-blood="AB+">AB+</button>
+                    <button class="finding-blood-btn" data-blood="AB-">AB-</button>
+                    <button class="finding-blood-btn" data-blood="O+">O+</button>
+                    <button class="finding-blood-btn" data-blood="O-">O-</button>
+                </div>
+                
+                <div class="finding-results" id="findingResults">
+                    <div class="finding-result-cards">
+                        <div class="finding-result-card finding-can-donate">
+                            <h4 class="finding-result-title finding-donate-title">
+                                <span class="finding-icon">💉</span>
+                                আপনি যাদের রক্তদান করতে পারবেন
+                            </h4>
+                            <div class="finding-blood-list" id="canDonate"></div>
+                        </div>
+                        
+                        <div class="finding-result-card finding-can-receive">
+                            <h4 class="finding-result-title finding-receive-title">
+                                <span class="finding-icon">🩸</span>
+                                যাদের কাছ থেকে রক্ত নিতে পারবেন
+                            </h4>
+                            <div class="finding-blood-list" id="canReceive"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Compatibility Chart -->
+            <div class="finding-compatibility-chart">
+                <h3 class="finding-chart-title">🔄 সম্পূর্ণ রক্তদান সামঞ্জস্যতা চার্ট</h3>
+                <div style="overflow-x: auto;">
+                    <table class="finding-chart-table">
+                        <thead>
+                            <tr>
+                                <th>দাতা → গ্রহীতা</th>
+                                <th>A+</th>
+                                <th>A-</th>
+                                <th>B+</th>
+                                <th>B-</th>
+                                <th>AB+</th>
+                                <th>AB-</th>
+                                <th>O+</th>
+                                <th>O-</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>A+</th>
+                                <td class="finding-compatible">✓</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td class="finding-compatible">✓</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                            </tr>
+                            <tr>
+                                <th>A-</th>
+                                <td class="finding-compatible">✓</td>
+                                <td class="finding-compatible">✓</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td class="finding-compatible">✓</td>
+                                <td class="finding-compatible">✓</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                            </tr>
+                            <tr>
+                                <th>B+</th>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td class="finding-compatible">✓</td>
+                                <td>✗</td>
+                                <td class="finding-compatible">✓</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                            </tr>
+                            <tr>
+                                <th>B-</th>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td class="finding-compatible">✓</td>
+                                <td class="finding-compatible">✓</td>
+                                <td class="finding-compatible">✓</td>
+                                <td class="finding-compatible">✓</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                            </tr>
+                            <tr>
+                                <th>AB+</th>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td class="finding-compatible">✓</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                            </tr>
+                            <tr>
+                                <th>AB-</th>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td class="finding-compatible">✓</td>
+                                <td class="finding-compatible">✓</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                            </tr>
+                            <tr>
+                                <th>O+</th>
+                                <td class="finding-compatible">✓</td>
+                                <td>✗</td>
+                                <td class="finding-compatible">✓</td>
+                                <td>✗</td>
+                                <td class="finding-compatible">✓</td>
+                                <td>✗</td>
+                                <td class="finding-compatible">✓</td>
+                                <td>✗</td>
+                            </tr>
+                            <tr>
+                                <th>O-</th>
+                                <td class="finding-compatible">✓</td>
+                                <td class="finding-compatible">✓</td>
+                                <td class="finding-compatible">✓</td>
+                                <td class="finding-compatible">✓</td>
+                                <td class="finding-compatible">✓</td>
+                                <td class="finding-compatible">✓</td>
+                                <td class="finding-compatible">✓</td>
+                                <td class="finding-compatible">✓</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
             <!-- Information Sections -->
             <section class="info-sections" id="importance">
                 <div class="info-card">
@@ -3809,7 +4429,110 @@ ahcollege@gmail.com</p>
 
 
     </script>
-    
+    <!-- finding -->
+
+      <script>
+        // Blood compatibility data
+        const findingBloodCompatibility = {
+            'A+': {
+                canDonate: ['A+', 'AB+'],
+                canReceive: ['A+', 'A-', 'O+', 'O-']
+            },
+            'A-': {
+                canDonate: ['A+', 'A-', 'AB+', 'AB-'],
+                canReceive: ['A-', 'O-']
+            },
+            'B+': {
+                canDonate: ['B+', 'AB+'],
+                canReceive: ['B+', 'B-', 'O+', 'O-']
+            },
+            'B-': {
+                canDonate: ['B+', 'B-', 'AB+', 'AB-'],
+                canReceive: ['B-', 'O-']
+            },
+            'AB+': {
+                canDonate: ['AB+'],
+                canReceive: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
+            },
+            'AB-': {
+                canDonate: ['AB+', 'AB-'],
+                canReceive: ['A-', 'B-', 'AB-', 'O-']
+            },
+            'O+': {
+                canDonate: ['A+', 'B+', 'AB+', 'O+'],
+                canReceive: ['O+', 'O-']
+            },
+            'O-': {
+                canDonate: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'],
+                canReceive: ['O-']
+            }
+        };
+
+        // Get DOM elements
+        const findingBloodBtns = document.querySelectorAll('.finding-blood-btn');
+        const findingResults = document.getElementById('findingResults');
+        const canDonate = document.getElementById('canDonate');
+        const canReceive = document.getElementById('canReceive');
+
+        // Add click event listeners
+        findingBloodBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                findingBloodBtns.forEach(b => b.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Get selected blood group
+                const selectedBlood = this.dataset.blood;
+                
+                // Show compatibility results
+                showFindingResults(selectedBlood);
+            });
+        });
+
+        function showFindingResults(bloodGroup) {
+            const compatibility = findingBloodCompatibility[bloodGroup];
+            
+            // Clear previous results
+            canDonate.innerHTML = '';
+            canReceive.innerHTML = '';
+            
+            // Show donate compatibility
+            compatibility.canDonate.forEach(blood => {
+                const span = document.createElement('span');
+                span.className = 'finding-blood-item finding-donate-item';
+                span.textContent = blood;
+                canDonate.appendChild(span);
+            });
+            
+            // Show receive compatibility
+            compatibility.canReceive.forEach(blood => {
+                const span = document.createElement('span');
+                span.className = 'finding-blood-item finding-receive-item';
+                span.textContent = blood;
+                canReceive.appendChild(span);
+            });
+            
+            // Show results with animation
+            findingResults.classList.add('show');
+        }
+
+        // Add some interactive effects
+        document.querySelectorAll('.finding-chart-table td').forEach(cell => {
+            cell.addEventListener('mouseenter', function() {
+                if (this.classList.contains('finding-compatible')) {
+                    this.style.transform = 'scale(1.1)';
+                    this.style.boxShadow = '0 5px 15px rgba(0, 184, 148, 0.4)';
+                }
+            });
+            
+            cell.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+    </script>
     
 </body>
 </html>
