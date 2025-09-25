@@ -476,8 +476,8 @@
                 padding: 15px;
             }
         }
-    </style> 
 
+    </style>
     
      <!-- welcome -->
 <style>
@@ -581,7 +581,7 @@
   }
 </style>
     
-    
+    <!-- main css -->
     <style>
         * {
             margin: 0;
@@ -1227,6 +1227,7 @@ transition: all 0.3s ease;
 
             .donors-grid {
                 grid-template-columns: 1fr;
+                margin-bottom: 50px;
             }
 
             .donor-body {
@@ -1391,6 +1392,7 @@ transition: all 0.3s ease;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            margin-bottom: 50px;
         }
 
         /* 🌙 Dark Mode */
@@ -2077,7 +2079,7 @@ position: relative;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    max-width: 600px;
+    max-width: 100%;
     width: 100%;
     overflow: hidden;
     animation: slideIn 0.8s ease-out;
@@ -2423,9 +2425,29 @@ position: relative;
 
             <!-- Donors Grid -->
             <section id="donorsSection" class="hidden">
-                <h3 style="margin-bottom: 20px; color: #2c3e50; font-size: 1.5rem;">
+              
+              
+                <h3 style="margin-bottom: 50px; color: #2c3e50; font-size: 1.5rem;">
                     <i class="fas fa-users"></i> রক্তদাতার তালিকা
                 </h3>
+                
+                <!-- Added donor count display section -->
+<div id="donorStats" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; margin-bottom: 30px; text-align: center;">
+    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: nowrap;">
+        
+        <!-- মোট রেজিস্টার -->
+        <div style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 8px; flex: 1; max-width: 300px;">
+            <h4 style="margin: 0; font-size: 1.2rem;">মোট রেজিস্টার</h4>
+            <p id="searchTotalCount" style="margin: 5px 0 0 0; font-size: 2rem; font-weight: bold;">0</p>
+        </div>
+
+        <!-- এখন রক্ত দিতে পারবে -->
+        <div style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 8px; flex: 1; max-width: 300px;">
+            <h4 style="margin: 0; font-size: 1.2rem;">এখন রক্ত দিতে পারবে</h4>
+            <p id="searchAvailableCount" style="margin: 5px 0 0 0; font-size: 2rem; font-weight: bold;">0</p>
+        </div>
+    </div>
+</div>
                 <div id="donorsGrid" class="donors-grid"></div>
             </section>
 
@@ -2869,7 +2891,7 @@ position: relative;
       
       
           <!-- Location Section -->
-    <div class="leadership-container">
+    <div style="margin-bottom: 40px">
         <div class="vector-container">
             <div class="vector-header">
                 <h2 class="vector-title">আমাদের অবস্থান</h2>
@@ -3102,6 +3124,276 @@ ahcollege@gmail.com</p>
                         </div>
                     </div>
 
+                    <!-- Adding new optional fields for age, weight, height, physical condition, and donation count -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>বয়স</label>
+                            <select id="regAge">
+                                <option value="">নির্বাচন করুন</option>
+                                <option value="17">১৭ বছর</option>
+                                <option value="18">১৮ বছর</option>
+                                <option value="19">১৯ বছর</option>
+                                <option value="20">২০ বছর</option>
+                                <option value="21">২১ বছর</option>
+                                <option value="22">২২ বছর</option>
+                                <option value="23">২৩ বছর</option>
+                                <option value="24">২৪ বছর</option>
+                                <option value="25">২৫ বছর</option>
+                                <option value="26">২৬ বছর</option>
+                                <option value="27">২৭ বছর</option>
+                                <option value="28">২৮ বছর</option>
+                                <option value="29">২৯ বছর</option>
+                                <option value="30">৩০ বছর</option>
+                                <option value="31">৩১ বছর</option>
+                                <option value="32">৩২ বছর</option>
+                                <option value="33">৩৩ বছর</option>
+                                <option value="34">৩৪ বছর</option>
+                                <option value="35">৩৫ বছর</option>
+                                <option value="36">৩৬ বছর</option>
+                                <option value="37">৩৭ বছর</option>
+                                <option value="38">৩৮ বছর</option>
+                                <option value="39">৩৯ বছর</option>
+                                <option value="40">৪০ বছর</option>
+                                <option value="41">৪১ বছর</option>
+                                <option value="42">৪২ বছর</option>
+                                <option value="43">৪৩ বছর</option>
+                                <option value="44">৪৪ বছর</option>
+                                <option value="45">৪৫ বছর</option>
+                                <option value="46">৪৬ বছর</option>
+                                <option value="47">৪৭ বছর</option>
+                                <option value="48">৪৮ বছর</option>
+                                <option value="49">৪৯ বছর</option>
+                                <option value="50">৫০ বছর</option>
+                                <option value="51">৫১ বছর</option>
+                                <option value="52">৫২ বছর</option>
+                                <option value="53">৫৩ বছর</option>
+                                <option value="54">৫৪ বছর</option>
+                                <option value="55">৫৫ বছর</option>
+                                <option value="56">৫৬ বছর</option>
+                                <option value="57">৫৭ বছর</option>
+                                <option value="58">৫৮ বছর</option>
+                                <option value="59">৫৯ বছর</option>
+                                <option value="60">৬০ বছর</option>
+                                <option value="61">৬১ বছর</option>
+                                <option value="62">৬২ বছর</option>
+                                <option value="63">৬৩ বছর</option>
+                                <option value="64">৬৪ বছর</option>
+                                <option value="65">৬৫ বছর</option>
+                                <option value="66">৬৬ বছর</option>
+                                <option value="67">৬৭ বছর</option>
+                                <option value="68">৬৮ বছর</option>
+                                <option value="69">৬৯ বছর</option>
+                                <option value="70">৭০ বছর</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>ওজন (কেজি)</label>
+                            <select id="regWeight" onchange="calculateBMI()">
+                                <option value="">নির্বাচন করুন</option>
+                                <option value="40">৪০ কেজি</option>
+                                <option value="41">৪১ কেজি</option>
+                                <option value="42">৪২ কেজি</option>
+                                <option value="43">৪৩ কেজি</option>
+                                <option value="44">৪৪ কেজি</option>
+                                <option value="45">৪৫ কেজি</option>
+                                <option value="46">৪৬ কেজি</option>
+                                <option value="47">৪৭ কেজি</option>
+                                <option value="48">৪৮ কেজি</option>
+                                <option value="49">৪৯ কেজি</option>
+                                <option value="50">৫০ কেজি</option>
+                                <option value="51">৫১ কেজি</option>
+                                <option value="52">৫২ কেজি</option>
+                                <option value="53">৫৩ কেজি</option>
+                                <option value="54">৫৪ কেজি</option>
+                                <option value="55">৫৫ কেজি</option>
+                                <option value="56">৫৬ কেজি</option>
+                                <option value="57">৫৭ কেজি</option>
+                                <option value="58">৫৮ কেজি</option>
+                                <option value="59">৫৯ কেজি</option>
+                                <option value="60">৬০ কেজি</option>
+                                <option value="61">৬১ কেজি</option>
+                                <option value="62">৬২ কেজি</option>
+                                <option value="63">৬৩ কেজি</option>
+                                <option value="64">৬৪ কেজি</option>
+                                <option value="65">৬৫ কেজি</option>
+                                <option value="66">৬৬ কেজি</option>
+                                <option value="67">৬৭ কেজি</option>
+                                <option value="68">৬৮ কেজি</option>
+                                <option value="69">৬৯ কেজি</option>
+                                <option value="70">৭০ কেজি</option>
+                                <option value="71">৭১ কেজি</option>
+                                <option value="72">৭২ কেজি</option>
+                                <option value="73">৭৩ কেজি</option>
+                                <option value="74">৭৪ কেজি</option>
+                                <option value="75">৭৫ কেজি</option>
+                                <option value="76">৭৬ কেজি</option>
+                                <option value="77">৭৭ কেজি</option>
+                                <option value="78">৭৮ কেজি</option>
+                                <option value="79">৭৯ কেজি</option>
+                                <option value="80">৮০ কেজি</option>
+                                <option value="81">৮১ কেজি</option>
+                                <option value="82">৮২ কেজি</option>
+                                <option value="83">৮৩ কেজি</option>
+                                <option value="84">৮৪ কেজি</option>
+                                <option value="85">৮৫ কেজি</option>
+                                <option value="86">৮৬ কেজি</option>
+                                <option value="87">৮৭ কেজি</option>
+                                <option value="88">৮৮ কেজি</option>
+                                <option value="89">৮৯ কেজি</option>
+                                <option value="90">৯০ কেজি</option>
+                                <option value="91">৯১ কেজি</option>
+                                <option value="92">৯২ কেজি</option>
+                                <option value="93">৯৩ কেজি</option>
+                                <option value="94">৯৪ কেজি</option>
+                                <option value="95">৯৫ কেজি</option>
+                                <option value="96">৯৬ কেজি</option>
+                                <option value="97">৯৭ কেজি</option>
+                                <option value="98">৯৮ কেজি</option>
+                                <option value="99">৯৯ কেজি</option>
+                                <option value="100">১০০ কেজি</option>
+                                <option value="101">১০১ কেজি</option>
+                                <option value="102">১০২ কেজি</option>
+                                <option value="103">১০৩ কেজি</option>
+                                <option value="104">১০৪ কেজি</option>
+                                <option value="105">১০৫ কেজি</option>
+                                <option value="106">১০৬ কেজি</option>
+                                <option value="107">১০৭ কেজি</option>
+                                <option value="108">১০৮ কেজি</option>
+                                <option value="109">১০৯ কেজি</option>
+                                <option value="110">১১০ কেজি</option>
+                                <option value="111">১১১ কেজি</option>
+                                <option value="112">১১২ কেজি</option>
+                                <option value="113">১১৩ কেজি</option>
+                                <option value="114">১১৪ কেজি</option>
+                                <option value="115">১১৫ কেজি</option>
+                                <option value="116">১১৬ কেজি</option>
+                                <option value="117">১১৭ কেজি</option>
+                                <option value="118">১১৮ কেজি</option>
+                                <option value="119">১১৯ কেজি</option>
+                                <option value="120">১২০ কেজি</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>উচ্চতা (ফুট)</label>
+                            <select id="regHeight" onchange="calculateBMI()">
+                                <option value="">নির্বাচন করুন</option>
+                  <option value="4.4">৪'৪"</option>             <option value="4.5">৪'৫"</option>
+                                <option value="4.6">৪'৬"</option>
+                                <option value="4.7">৪'৭"</option>
+                                <option value="4.8">৪'৮"</option>
+                                <option value="4.9">৪'৯"</option>
+                                <option value="4.10">৪'১০"</option>
+                 
+                 <option value="4.11">৪'১১"</option>              
+                                <option value="5.0">৫'০"</option>
+                                <option value="5.1">৫'১"</option>
+                                <option value="5.2">৫'২"</option>
+                                <option value="5.3">৫'৩"</option>
+                                <option value="5.4">৫'৪"</option>
+                                <option value="5.5">৫'৫"</option>
+                                <option value="5.6">৫'৬"</option>
+                                <option value="5.7">৫'৭"</option>
+                                <option value="5.8">৫'৮"</option>
+                                <option value="5.9">৫'৯"</option>
+                                <option value="5.10">৫'১০"</option>
+                                <option value="5.11">৫'১১"</option>
+                                <option value="6.0">৬'০"</option>
+                                <option value="6.1">৬'১"</option>
+                                <option value="6.2">৬'২"</option>
+                                <option value="6.3">৬'৩"</option>
+                                <option value="6.4">৬'৪"</option>
+                                <option value="6.5">৬'৫"</option>
+                                <option value="6.6">৬'৬"</option>
+                  
+                <option value="6.7">৬'৭"</option>
+                <option value="6.8">৬'৮"</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>শারীরিক অবস্থা</label>
+                            <select id="regPhysicalCondition">
+                                <option value="">নির্বাচন করুন</option>
+                                <option value="সম্পূর্ণ সুস্থ">সম্পূর্ণ সুস্থ</option>
+                <option value="স্বাভাবিক সুস্থ">স্বাভাবিক সুস্থ</option>
+<option value="কোনোটিই নয়">কোনোটিই নয়</option>
+<option value="অল্প অসুস্থ">অল্প অসুস্থ</option>              <option value="দুর্বল">দুর্বল</option>
+                                <option value="অতিরিক্ত অসুস্থ">অতিরিক্ত অসুস্থ</option>
+                                <option value="অপুষ্ট / খুব কম ওজন">অপুষ্ট / খুব কম ওজন</option>
+                                <option value="সাম্প্রতিক জ্বর / অসুস্থতা">সাম্প্রতিক জ্বর / অসুস্থতা</option>
+                                <option value="দীর্ঘমেয়াদী রোগ আছে">দীর্ঘমেয়াদী রোগ আছে</option>
+                                <option value="গর্ভবতী / সদ্য সন্তান জন্ম দিয়েছেন">গর্ভবতী / সদ্য সন্তান জন্ম দিয়েছেন (নারীদের জন্য)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>মোট রক্তদানের সংখ্যা</label>
+                            <select id="regTotalDonations">
+                                <option value="">নির্বাচন করুন</option>
+                                <option value="0">০ বার</option>
+                                <option value="1">১ বার</option>
+                                <option value="2">২ বার</option>
+                                <option value="3">৩ বার</option>
+                                <option value="4">৪ বার</option>
+                                <option value="5">৫ বার</option>
+                                <option value="6">৬ বার</option>
+                                <option value="7">৭ বার</option>
+                                <option value="8">৮ বার</option>
+                                <option value="9">৯ বার</option>
+                                <option value="10">১০ বার</option>
+                                <option value="11">১১ বার</option>
+                                <option value="12">১২ বার</option>
+                                <option value="13">১৩ বার</option>
+                                <option value="14">১৪ বার</option>
+                                <option value="15">১৫ বার</option>
+                                <option value="16">১৬ বার</option>
+                                <option value="17">১৭ বার</option>
+                                <option value="18">১৮ বার</option>
+                                <option value="19">১৯ বার</option>
+                                <option value="20">২০ বার</option>
+                                <option value="21">২১ বার</option>
+                                <option value="22">২২ বার</option>
+                                <option value="23">২৩ বার</option>
+                                <option value="24">২৪ বার</option>
+                                <option value="25">২৫ বার</option>
+                                <option value="26">২৬ বার</option>
+                                <option value="27">২৭ বার</option>
+                                <option value="28">২৮ বার</option>
+                                <option value="29">২৯ বার</option>
+                                <option value="30">৩০ বার</option>
+                                <option value="31">৩১ বার</option>
+                                <option value="32">৩২ বার</option>
+                                <option value="33">৩৩ বার</option>
+                                <option value="34">৩৪ বার</option>
+                                <option value="35">৩৫ বার</option>
+                                <option value="36">৩৬ বার</option>
+                                <option value="37">৩৭ বার</option>
+                                <option value="38">৩৮ বার</option>
+                                <option value="39">৩৯ বার</option>
+                                <option value="40">৪০ বার</option>
+                                <option value="41">৪১ বার</option>
+                                <option value="42">৪২ বার</option>
+                                <option value="43">৪৩ বার</option>
+                                <option value="44">৪৪ বার</option>
+                                <option value="45">৪৫ বার</option>
+                                <option value="46">৪৬ বার</option>
+                                <option value="47">৪৭ বার</option>
+                                <option value="48">৪৮ বার</option>
+                                <option value="49">৪৯ বার</option>
+                                <option value="50">৫০ বার</option>
+                                <option value="50+">৫০+ বার</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>BMI</label>
+                            <input type="text" id="regBMI" readonly placeholder="স্বয়ংক্রিয় গণনা হবে" style="background-color: #f8f9fa;">
+                        </div>
+                    </div>
+
                     <div class="form-row">
                         <div class="form-group">
                             <label>ইমেইল *</label>
@@ -3291,6 +3583,269 @@ ahcollege@gmail.com</p>
                         </div>
                     </div>
 
+                    <!-- Add optional fields to profile update form -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>বয়স</label>
+                            <select id="profileAge">
+                                <option value="">নির্বাচন করুন</option>
+                                <option value="17">১৭ বছর</option>
+                                <option value="18">১৮ বছর</option>
+                                <option value="19">১৯ বছর</option>
+                                <option value="20">২০ বছর</option>
+                                <option value="21">২১ বছর</option>
+                                <option value="22">২২ বছর</option>
+                                <option value="23">২৩ বছর</option>
+                                <option value="24">২৪ বছর</option>
+                                <option value="25">২৫ বছর</option>
+                                <option value="26">২৬ বছর</option>
+                                <option value="27">২৭ বছর</option>
+                                <option value="28">২৮ বছর</option>
+                                <option value="29">২৯ বছর</option>
+                                <option value="30">৩০ বছর</option>
+                                <option value="31">৩১ বছর</option>
+                                <option value="32">৩২ বছর</option>
+                                <option value="33">৩৩ বছর</option>
+                                <option value="34">৩৪ বছর</option>
+                                <option value="35">৩৫ বছর</option>
+                                <option value="36">৩৬ বছর</option>
+                                <option value="37">৩৭ বছর</option>
+                                <option value="38">৩৮ বছর</option>
+                                <option value="39">৩৯ বছর</option>
+                                <option value="40">৪০ বছর</option>
+                                <option value="41">৪১ বছর</option>
+                                <option value="42">৪২ বছর</option>
+                                <option value="43">৪৩ বছর</option>
+                                <option value="44">৪৪ বছর</option>
+                                <option value="45">৪৫ বছর</option>
+                                <option value="46">৪৬ বছর</option>
+                                <option value="47">৪৭ বছর</option>
+                                <option value="48">৪৮ বছর</option>
+                                <option value="49">৪৯ বছর</option>
+                                <option value="50">৫০ বছর</option>
+                                <option value="51">৫১ বছর</option>
+                                <option value="52">৫২ বছর</option>
+                                <option value="53">৫৩ বছর</option>
+                                <option value="54">৫৪ বছর</option>
+                                <option value="55">৫৫ বছর</option>
+                                <option value="56">৫৬ বছর</option>
+                                <option value="57">৫৭ বছর</option>
+                                <option value="58">৫৮ বছর</option>
+                                <option value="59">৫৯ বছর</option>
+                                <option value="60">৬০ বছর</option>
+                                <option value="61">৬১ বছর</option>
+                                <option value="62">৬২ বছর</option>
+                                <option value="63">৬৩ বছর</option>
+                                <option value="64">৬৪ বছর</option>
+                                <option value="65">৬৫ বছর</option>
+                                <option value="66">৬৬ বছর</option>
+                                <option value="67">৬৭ বছর</option>
+                                <option value="68">৬৮ বছর</option>
+                                <option value="69">৬৯ বছর</option>
+                                <option value="70">৭০ বছর</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>ওজন (কেজি)</label>
+                            <select id="profileWeight" onchange="calculateProfileBMI()">
+                                <option value="">নির্বাচন করুন</option>
+                                <option value="40">৪০ কেজি</option>
+                                <option value="41">৪১ কেজি</option>
+                                <option value="42">৪২ কেজি</option>
+                                <option value="43">৪৩ কেজি</option>
+                                <option value="44">৪৪ কেজি</option>
+                                <option value="45">৪৫ কেজি</option>
+                                <option value="46">৪৬ কেজি</option>
+                                <option value="47">৪৭ কেজি</option>
+                                <option value="48">৪৮ কেজি</option>
+                                <option value="49">৪৯ কেজি</option>
+                                <option value="50">৫০ কেজি</option>
+                                <option value="51">৫১ কেজি</option>
+                                <option value="52">৫২ কেজি</option>
+                                <option value="53">৫৩ কেজি</option>
+                                <option value="54">৫৪ কেজি</option>
+                                <option value="55">৫৫ কেজি</option>
+                                <option value="56">৫৬ কেজি</option>
+                                <option value="57">৫৭ কেজি</option>
+                                <option value="58">৫৮ কেজি</option>
+                                <option value="59">৫৯ কেজি</option>
+                                <option value="60">৬০ কেজি</option>
+                                <option value="61">৬১ কেজি</option>
+                                <option value="62">৬২ কেজি</option>
+                                <option value="63">৬৩ কেজি</option>
+                                <option value="64">৬৪ কেজি</option>
+                                <option value="65">৬৫ কেজি</option>
+                                <option value="66">৬৬ কেজি</option>
+                                <option value="67">৬৭ কেজি</option>
+                                <option value="68">৬৮ কেজি</option>
+                                <option value="69">৬৯ কেজি</option>
+                                <option value="70">৭০ কেজি</option>
+                                <option value="71">৭১ কেজি</option>
+                                <option value="72">৭২ কেজি</option>
+                                <option value="73">৭৩ কেজি</option>
+                                <option value="74">৭৪ কেজি</option>
+                                <option value="75">৭৫ কেজি</option>
+                                <option value="76">৭৬ কেজি</option>
+                                <option value="77">৭৭ কেজি</option>
+                                <option value="78">৭৮ কেজি</option>
+                                <option value="79">৭৯ কেজি</option>
+                                <option value="80">৮০ কেজি</option>
+                                <option value="81">৮১ কেজি</option>
+                                <option value="82">৮২ কেজি</option>
+                                <option value="83">৮৩ কেজি</option>
+                                <option value="84">৮৪ কেজি</option>
+                                <option value="85">৮৫ কেজি</option>
+                                <option value="86">৮৬ কেজি</option>
+                                <option value="87">৮৭ কেজি</option>
+                                <option value="88">৮৮ কেজি</option>
+                                <option value="89">৮৯ কেজি</option>
+                                <option value="90">৯০ কেজি</option>
+                                <option value="91">৯১ কেজি</option>
+                                <option value="92">৯২ কেজি</option>
+                                <option value="93">৯৩ কেজি</option>
+                                <option value="94">৯৪ কেজি</option>
+                                <option value="95">৯৫ কেজি</option>
+                                <option value="96">৯৬ কেজি</option>
+                                <option value="97">৯৭ কেজি</option>
+                                <option value="98">৯৮ কেজি</option>
+                                <option value="99">৯৯ কেজি</option>
+                                <option value="100">১০০ কেজি</option>
+                                <option value="101">১০১ কেজি</option>
+                                <option value="102">১০২ কেজি</option>
+                                <option value="103">১০৩ কেজি</option>
+                                <option value="104">১০৪ কেজি</option>
+                                <option value="105">১০৫ কেজি</option>
+                                <option value="106">১০৬ কেজি</option>
+                                <option value="107">১০৭ কেজি</option>
+                                <option value="108">১০৮ কেজি</option>
+                                <option value="109">১০৯ কেজি</option>
+                                <option value="110">১১০ কেজি</option>
+                                <option value="111">১১১ কেজি</option>
+                                <option value="112">১১২ কেজি</option>
+                                <option value="113">১১৩ কেজি</option>
+                                <option value="114">১১৪ কেজি</option>
+                                <option value="115">১১৫ কেজি</option>
+                                <option value="116">১১৬ কেজি</option>
+                                <option value="117">১১৭ কেজি</option>
+                                <option value="118">১১৮ কেজি</option>
+                                <option value="119">১১৯ কেজি</option>
+                                <option value="120">১২০ কেজি</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>উচ্চতা (ফুট)</label>
+                            <select id="profileHeight" onchange="calculateProfileBMI()">
+                                <option value="">নির্বাচন করুন</option>
+                                <option value="4.5">৪'৬"</option>
+                                <option value="4.6">ৄ'৭"</option>
+                                <option value="4.7">৪'৮"</option>
+                                <option value="4.8">৪'৯"</option>
+                                <option value="4.9">৪'১০"</option>
+                                <option value="4.10">৪'১১"</option>
+                                <option value="5.0">৫'০"</option>
+                                <option value="5.1">৫'১"</option>
+                                <option value="5.2">৫'২"</option>
+                                <option value="5.3">৫'৩"</option>
+                                <option value="5.4">৫'৪"</option>
+                                <option value="5.5">৫'৫"</option>
+                                <option value="5.6">৫'৬"</option>
+                                <option value="5.7">৫'৭"</option>
+                                <option value="5.8">৫'৮"</option>
+                                <option value="5.9">৫'৯"</option>
+                                <option value="5.10">৫'১০"</option>
+                                <option value="5.11">৫'১১"</option>
+                                <option value="6.0">৬'০"</option>
+                                <option value="6.1">৬'১"</option>
+                                <option value="6.2">৬'২"</option>
+                                <option value="6.3">৬'৩"</option>
+                                <option value="6.4">৬'৪"</option>
+                                <option value="6.5">৬'৫"</option>
+                                <option value="6.6">৬'৬"</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>শারীরিক অবস্থা</label>
+                            <select id="profilePhysicalCondition">
+                                <option value="">নির্বাচন করুন</option>
+                                <option value="সম্পূর্ণ সুস্থ">সম্পূর্ণ সুস্থ</option>
+                                <option value="দুর্বল">দুর্বল</option>
+                                <option value="অতিরিক্ত অসুস্থ">অতিরিক্ত অসুস্থ</option>
+                                <option value="অপুষ্ট / খুব কম ওজন">অপুষ্ট / খুব কম ওজন</option>
+                                <option value="সাম্প্রতিক জ্বর / অসুস্থতা">সাম্প্রতিক জ্বর / অসুস্থতা</option>
+                                <option value="দীর্ঘমেয়াদী রোগ আছে">দীর্ঘমেয়াদী রোগ আছে</option>
+                                <option value="গর্ভবতী / সদ্য সন্তান জন্ম দিয়েছেন">গর্ভবতী / সদ্য সন্তান জন্ম দিয়েছেন (নারীদের জন্য)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>মোট রক্তদানের সংখ্যা</label>
+                            <select id="profileTotalDonations">
+                                <option value="">নির্বাচন করুন</option>
+                                <option value="0">০ বার</option>
+                                <option value="1">১ বার</option>
+                                <option value="2">২ বার</option>
+                                <option value="3">৩ বার</option>
+                                <option value="4">৪ বার</option>
+                                <option value="5">৫ বার</option>
+                                <option value="6">৬ বার</option>
+                                <option value="7">৭ বার</option>
+                                <option value="8">৮ বার</option>
+                                <option value="9">৯ বার</option>
+                                <option value="10">১০ বার</option>
+                                <option value="11">১১ বার</option>
+                                <option value="12">১২ বার</option>
+                                <option value="13">১৩ বার</option>
+                                <option value="14">১৪ বার</option>
+                                <option value="15">১৫ বার</option>
+                                <option value="16">১৬ বার</option>
+                                <option value="17">১৭ বার</option>
+                                <option value="18">১৮ বার</option>
+                                <option value="19">১৯ বার</option>
+                                <option value="20">২০ বার</option>
+                                <option value="21">২১ বার</option>
+                                <option value="22">২২ বার</option>
+                                <option value="23">২৩ বার</option>
+                                <option value="24">২৪ বার</option>
+                                <option value="25">২৫ বার</option>
+                                <option value="26">২৬ বার</option>
+                                <option value="27">২৭ বার</option>
+                                <option value="28">২৮ বার</option>
+                                <option value="29">২৯ বার</option>
+                                <option value="30">৩০ বার</option>
+                                <option value="31">৩১ বার</option>
+                                <option value="32">৩২ বার</option>
+                                <option value="33">৩৩ বার</option>
+                                <option value="34">৩৪ বার</option>
+                                <option value="35">৩৫ বার</option>
+                                <option value="36">৩৬ বার</option>
+                                <option value="37">৩৭ বার</option>
+                                <option value="38">৩৮ বার</option>
+                                <option value="39">৩৯ বার</option>
+                                <option value="40">৪০ বার</option>
+                                <option value="41">৪১ বার</option>
+                                <option value="42">৪২ বার</option>
+                                <option value="43">৪৩ বার</option>
+                                <option value="44">৪৪ বার</option>
+                                <option value="45">৪৫ বার</option>
+                                <option value="46">৪৬ বার</option>
+                                <option value="47">৪৭ বার</option>
+                                <option value="48">৪৮ বার</option>
+                                <option value="49">৪৯ বার</option>
+                                <option value="50">৫০ বার</option>
+                                <option value="50+">৫০+ বার</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>BMI</label>
+                            <input type="text" id="profileBMI" readonly placeholder="স্বয়ংক্রিয় গণনা হবে" style="background-color: #f8f9fa;">
+                        </div>
+                    </div>
+
                     <div style="display: flex; gap: 15px;">
                         <button type="submit" class="submit-btn" style="flex: 1;">
                             <i class="fas fa-save"></i> আপডেট করুন
@@ -3415,6 +3970,7 @@ ahcollege@gmail.com</p>
             <h3 style="margin-bottom: 20px;"><i class="fas fa-list"></i> সকল ডোনার</h3>
             <div id="adminDonorsGrid" class="donors-grid"></div>
         </div>
+
     </div>
 
     <!-- Firebase SDK -->
@@ -3532,11 +4088,17 @@ ahcollege@gmail.com</p>
     setTimeout(closeOverlay, 5000);
   });
   </script>
+  
+  <!-- main script -->
     <script>
         // Global variables
         let currentUser = null;
         let isAdmin = false;
         let allDonors = [];
+        let bloodGroupChart = null;
+        let ageChart = null;
+        let registrationChart = null;
+        let physicalConditionChart = null;
 
         // Populate session dropdowns
         function populateSessionDropdowns() {
@@ -3547,6 +4109,12 @@ ahcollege@gmail.com</p>
                 console.log("[v0] Found select element:", selectId, select);
                 if (select) {
                     select.innerHTML = '<option value="">নির্বাচন করুন</option>';
+                    
+                    // Add "অন্যান্য" option first
+                    const otherOption = document.createElement('option');
+                    otherOption.value = 'অন্যান্য';
+                    otherOption.textContent = 'অন্যান্য';
+                    select.appendChild(otherOption);
                     
                     for (let year = 2000; year <= 2030; year++) {
                         const nextYear = year + 1;
@@ -3585,6 +4153,12 @@ ahcollege@gmail.com</p>
                     willing: "yes",
                     previousDonation: "yes",
                     lastDonationDate: "2025-09-11",
+                    age: "22",
+                    weight: "65",
+                    height: "5.8",
+                    physicalCondition: "সম্পূর্ণ সুস্থ",
+                    totalDonations: "15",
+                    bmi: "22.3",
                     registrationDate: new Date().toISOString()
                 },
                 {
@@ -3601,6 +4175,12 @@ ahcollege@gmail.com</p>
                     willing: "no",
                     previousDonation: "no",
                     lastDonationDate: "",
+                    age: "21",
+                    weight: "60",
+                    height: "5.7",
+                    physicalCondition: "দুর্বল",
+                    totalDonations: "0",
+                    bmi: "20.4",
                     registrationDate: new Date().toISOString()
                 },
                 {
@@ -3617,6 +4197,12 @@ ahcollege@gmail.com</p>
                     willing: "yes",
                     previousDonation: "yes",
                     lastDonationDate: "2023-01-01",
+                    age: "23",
+                    weight: "70",
+                    height: "5.9",
+                    physicalCondition: "সম্পূর্ণ সুস্থ",
+                    totalDonations: "5",
+                    bmi: "23.2",
                     registrationDate: new Date().toISOString()
                 },
                 {
@@ -3633,6 +4219,12 @@ ahcollege@gmail.com</p>
                     willing: "yes",
                     previousDonation: "no",
                     lastDonationDate: "",
+                    age: "20",
+                    weight: "50",
+                    height: "5.3",
+                    physicalCondition: "অপুষ্ট / খুব কম ওজন",
+                    totalDonations: "0",
+                    bmi: "18.5",
                     registrationDate: new Date().toISOString()
                 }
             ];
@@ -3665,6 +4257,10 @@ ahcollege@gmail.com</p>
                         allDonors.push(donor);
                     });
                     updateDashboardStats();
+                    if (isAdmin) {
+                        loadAdminDonors();
+                        initializeCharts();
+                    }
                 }
             } catch (error) {
                 console.error('Error loading donors:', error);
@@ -3751,6 +4347,41 @@ ahcollege@gmail.com</p>
             }
         }
 
+        function calculateBMI() {
+            const weight = parseFloat(document.getElementById('regWeight').value);
+            const heightValue = parseFloat(document.getElementById('regHeight').value);
+            
+            if (weight && heightValue) {
+                const feet = Math.floor(heightValue);
+                const inches = Math.round((heightValue - feet) * 10);
+                const totalInches = (feet * 12) + inches;
+                const heightMeters = totalInches * 0.0254; // Convert inches to meters
+                
+                const bmi = weight / (heightMeters * heightMeters);
+                document.getElementById('regBMI').value = bmi.toFixed(1);
+            } else {
+                document.getElementById('regBMI').value = '';
+            }
+        }
+
+        // Add BMI calculation function for profile update
+        function calculateProfileBMI() {
+            const weight = parseFloat(document.getElementById('profileWeight').value);
+            const heightValue = parseFloat(document.getElementById('profileHeight').value);
+            
+            if (weight && heightValue) {
+                const feet = Math.floor(heightValue);
+                const inches = Math.round((heightValue - feet) * 10);
+                const totalInches = (feet * 12) + inches;
+                const heightMeters = totalInches * 0.0254; // Convert inches to meters
+                
+                const bmi = weight / (heightMeters * heightMeters);
+                document.getElementById('profileBMI').value = bmi.toFixed(1);
+            } else {
+                document.getElementById('profileBMI').value = '';
+            }
+        }
+
         // Registration form
         document.getElementById('registrationForm').addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -3779,6 +4410,13 @@ ahcollege@gmail.com</p>
                 willing: document.getElementById('regWilling').value,
                 previousDonation: document.getElementById('regPreviousDonation').value,
                 lastDonationDate: document.getElementById('regLastDonationDate').value,
+                // New optional fields
+                age: document.getElementById('regAge').value || '',
+                weight: document.getElementById('regWeight').value || '',
+                height: document.getElementById('regHeight').value || '',
+                physicalCondition: document.getElementById('regPhysicalCondition').value || '',
+                totalDonations: document.getElementById('regTotalDonations').value || '',
+                bmi: document.getElementById('regBMI').value || '',
                 registrationDate: new Date().toISOString()
             };
 
@@ -3891,7 +4529,16 @@ ahcollege@gmail.com</p>
             document.getElementById('profilePreviousDonation').value = currentUser.previousDonation;
             document.getElementById('profileLastDonationDate').value = currentUser.lastDonationDate;
             
+            // Load new optional fields into profile form
+            document.getElementById('profileAge').value = currentUser.age || '';
+            document.getElementById('profileWeight').value = currentUser.weight || '';
+            document.getElementById('profileHeight').value = currentUser.height || '';
+            document.getElementById('profilePhysicalCondition').value = currentUser.physicalCondition || '';
+            document.getElementById('profileTotalDonations').value = currentUser.totalDonations || '';
+            document.getElementById('profileBMI').value = currentUser.bmi || '';
+            
             toggleProfileDateField();
+            calculateProfileBMI(); // Recalculate BMI for profile
         }
 
         // Profile update
@@ -3911,7 +4558,14 @@ ahcollege@gmail.com</p>
                 hideMobile: document.getElementById('profileHideMobile').checked,
                 willing: document.getElementById('profileWilling').value,
                 previousDonation: document.getElementById('profilePreviousDonation').value,
-                lastDonationDate: document.getElementById('profileLastDonationDate').value
+                lastDonationDate: document.getElementById('profileLastDonationDate').value,
+                // Update profile with new optional fields
+                age: document.getElementById('profileAge').value || '',
+                weight: document.getElementById('profileWeight').value || '',
+                height: document.getElementById('profileHeight').value || '',
+                physicalCondition: document.getElementById('profilePhysicalCondition').value || '',
+                totalDonations: document.getElementById('profileTotalDonations').value || '',
+                bmi: document.getElementById('profileBMI').value || ''
             };
 
             try {
@@ -3974,9 +4628,27 @@ ahcollege@gmail.com</p>
                 filteredDonors = allDonors.filter(donor => donor.bloodGroup === bloodGroup);
             }
 
+            // ⭐ নতুন যুক্ত করা হয়েছে: পরিসংখ্যান আপডেট করার জন্য
+            updateSearchStats(filteredDonors);
+            
             displayDonors(filteredDonors);
             document.getElementById('donorsSection').classList.remove('hidden');
         }
+        // শুধু Donor Count Update এর জন্য কোড
+function updateSearchStats(donors) {
+    // মোট রেজিস্টার সংখ্যা
+    const totalCount = donors.length;
+
+    // এখন রক্ত দিতে পারবে এমন দাতাদের সংখ্যা
+    const availableCount = donors.filter(donor => {
+        const canDonate = checkDonationEligibility(donor);
+        return donor.willing === 'yes' && canDonate.eligible;
+    }).length;
+
+    // DOM এ মান বসানো
+    document.getElementById('searchTotalCount').textContent = totalCount;
+    document.getElementById('searchAvailableCount').textContent = availableCount;
+}
 
         // Display donors
         function displayDonors(donors) {
@@ -4068,6 +4740,31 @@ ahcollege@gmail.com</p>
                         <span>${donor.email}</span>
                     </div>
                     ` : ''}
+                    <!-- Display new optional fields in donor card -->
+                    <div class="info-item">
+                        <i class="fas fa-birthday-cake"></i>
+                        <span>বয়স: ${donor.age || 'N/A'}</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-weight"></i>
+                        <span>ওজন: ${donor.weight || 'N/A'} কেজি</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-ruler-vertical"></i>
+                        <span>উচ্চতা: ${donor.height ? donor.height + '"' : 'N/A'}</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>BMI: ${donor.bmi || 'N/A'}</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-stethoscope"></i>
+                        <span>শারীরিক অবস্থা: ${donor.physicalCondition || 'N/A'}</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <span>মোট রক্তদান: ${donor.totalDonations || 'N/A'}</span>
+                    </div>
                 </div>
                 
                 <div class="status-badges">
@@ -4116,12 +4813,20 @@ ahcollege@gmail.com</p>
             document.querySelector('.main-content').style.display = 'none';
             document.getElementById('adminDashboard').style.display = 'block';
             loadAdminDonors();
+            setTimeout(() => {
+                initializeCharts();
+            }, 100);
         }
 
         function adminLogout() {
             isAdmin = false;
             document.querySelector('.main-content').style.display = 'block';
             document.getElementById('adminDashboard').style.display = 'none';
+            // Destroy existing charts to prevent memory leaks and redraw issues
+            if (bloodGroupChart) bloodGroupChart.destroy();
+            if (ageChart) ageChart.destroy();
+            if (registrationChart) registrationChart.destroy();
+            if (physicalConditionChart) physicalConditionChart.destroy();
         }
 
         function loadAdminDonors() {
@@ -4429,6 +5134,7 @@ ahcollege@gmail.com</p>
 
 
     </script>
+    
     <!-- finding -->
 
       <script>
@@ -4533,6 +5239,44 @@ ahcollege@gmail.com</p>
             });
         });
     </script>
+    
+    <!-- statistics function -->
+    <script>
+      
+      // Search donors
+function searchDonors() {
+    const bloodGroup = document.getElementById('bloodGroupSearch').value;
+    let filteredDonors = allDonors;
+
+    if (bloodGroup) {
+        filteredDonors = allDonors.filter(donor => donor.bloodGroup === bloodGroup);
+    }
+
+    // ⭐ নতুন যুক্ত করা হয়েছে: পরিসংখ্যান আপডেট করার জন্য
+    updateSearchStats(filteredDonors);
+    
+    displayDonors(filteredDonors);
+    document.getElementById('donorsSection').classList.remove('hidden');
+}
+// শুধু Donor Count Update এর জন্য কোড
+function updateSearchStats(donors) {
+    // মোট রেজিস্টার সংখ্যা
+    const totalCount = donors.length;
+
+    // এখন রক্ত দিতে পারবে এমন দাতাদের সংখ্যা
+    const availableCount = donors.filter(donor => {
+        const canDonate = checkDonationEligibility(donor);
+        return donor.willing === 'yes' && canDonate.eligible;
+    }).length;
+
+    // DOM এ মান বসানো
+    document.getElementById('searchTotalCount').textContent = totalCount;
+    document.getElementById('searchAvailableCount').textContent = availableCount;
+}
+
+    </script>
+    
+    
     
 </body>
 </html>
