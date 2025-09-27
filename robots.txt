@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://msharifulvisionary.github.io/ahc-blood-finder-website/sitemap.xml
