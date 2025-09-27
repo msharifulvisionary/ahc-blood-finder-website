@@ -2439,6 +2439,73 @@ position: relative;
 */
 
 </style>
+
+<!-- BMI image -->
+<style>
+/* Container */
+.deepo-image-container {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 100%;
+}
+
+/* Image style */
+.deepo-image {
+    max-width: 300px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    max-width: 100%;
+}
+
+/* Download button */
+.deepo-download-btn {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Modal style */
+.deepo-image-display-modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Modal content */
+.deepo-image-modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+/* Close button */
+.deepo-image-close {
+    position: absolute;
+    bottom: 10px;      /* ইমেজের নিচে 10px উপরে */
+    left: 50%;          /* কেন্দ্রের দিকে */
+    transform: translateX(-50%); /* সেন্টার ঠিক করার জন্য */
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+</style>
     
 </head>
 <body>
@@ -2823,6 +2890,23 @@ position: relative;
             </div>
         </div>
     </section>
+    
+    <!-- BMI image -->
+    
+<div class="deepo-image-container">
+    <img src="https://i.imgur.com/8zLDkcy.png" alt="Registration Modal Visual" class="deepo-image" onclick="openImageModal('https://i.imgur.com/8zLDkcy.png')">
+    <br>
+    <button class="deepo-download-btn" onclick="downloadImage('https://i.imgur.com/8zLDkcy.png', 'registration_image.png')">
+        ডাউনলোড করুন
+    </button>
+</div>
+
+<!-- Lightbox Modal -->
+<div id="imageDisplayModal" class="deepo-image-display-modal">
+    <span class="deepo-image-close" onclick="closeModal('imageDisplayModal')">&times;</span>
+    <img class="deepo-image-modal-content" id="deepoImageContent">
+</div>
+
             <!-- Information Sections -->
             <section class="info-sections" id="importance">
                 <div class="info-card">
@@ -3548,6 +3632,14 @@ ahcollege@gmail.com</p>
                             <input type="text" id="regBMI" readonly placeholder="স্বয়ংক্রিয় গণনা হবে" style="background-color: #f8f9fa;">
                         </div>
                     </div>
+                    
+                    <!-- BMI image -->
+                    <div class="deepo-image-container">
+    <img src="https://i.imgur.com/8zLDkcy.png" alt="Registration Modal Visual" class="deepo-image">
+    <br>
+</div>
+
+
 
                     <div class="form-row">
                         <div class="form-group">
@@ -3666,22 +3758,35 @@ ahcollege@gmail.com</p>
                             <label>ডিপার্টমেন্ট *</label>
                             <select id="profileDepartment" required>
                                 <option value="">নির্বাচন করুন</option>
-                                <option value="পদার্থবিজ্ঞান">পদার্থবিজ্ঞান</option>
-                                <option value="রসায়ন">রসায়ন</option>
-                                <option value="গণিত">গণিত</option>
-                                <option value="জীববিজ্ঞান">জীববিজ্ঞান</option>
-                                <option value="বাংলা">বাংলা</option>
-                                <option value="ইংরেজি">ইংরেজি</option>
-                                <option value="ইতিহাস">ইতিহাস</option>
-                                <option value="রাষ্ট্রবিজ্ঞান">রাষ্ট্রবিজ্ঞান</option>
-                                <option value="অর্থনীতি">অর্থনীতি</option>
-                                <option value="দর্শন">দর্শন</option>
-                                <option value="ইসলামিক স্টাডিজ">ইসলামিক স্টাডিজ</option>
-                                <option value="সমাজবিজ্ঞান">সমাজবিজ্ঞান</option>
+                                                 <option value="অন্যান্য">অন্যান্য</option>               
+                                <option value="HSC">HSC</option>
+<option value="পদার্থবিজ্ঞান">পদার্থবিজ্ঞান</option>
+<option value="রসায়ন">রসায়ন</option>
+<option value="গণিত">গণিত</option>
+<option value="উদ্ভিদবিদ্যা">উদ্ভিদবিদ্যা</option>
+<option value="প্রাণিবিদ্যা">প্রাণিবিদ্যা</option>
+<option value="পরিসংখ্যান">পরিসংখ্যান</option>
+<option value="ভূগোল ও পরিবেশ">ভূগোল ও পরিবেশ</option>
+<option value="মনোবিজ্ঞান">মনোবিজ্ঞান</option>
+<option value="বাংলা">বাংলা</option>
+<option value="ইংরেজি">ইংরেজি</option>
+<option value="ইতিহাস">ইতিহাস</option>
+<option value="দর্শন">দর্শন</option>
+<option value="ইসলামের ইতিহাস ও সংস্কৃতি">ইসলামের ইতিহাস ও সংস্কৃতি</option>
+<option value="ইসলামিক স্টাডিজ">ইসলামিক স্টাডিজ</option>
+<option value="আরবি">আরবি</option>
+<option value="অর্থনীতি">অর্থনীতি</option>
+<option value="রাষ্ট্রবিজ্ঞান">রাষ্ট্রবিজ্ঞান</option>
+<option value="সমাজবিজ্ঞান">সমাজবিজ্ঞান</option>
+<option value="সমাজকর্ম">সমাজকর্ম</option>
+<option value="হিসাববিজ্ঞান">হিসাববিজ্ঞান</option>
+<option value="ব্যবস্থাপনা">ব্যবস্থাপনা</option>
+<option value="ফিন্যান্স ও ব্যাংকিং">ফিন্যান্স ও ব্যাংকিং</option>
+<option value="মার্কেটিং">মার্কেটিং</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>সেশন *</label>
+                            <label>সেশন</label>
                             <select id="profileSession" ></select>
                         </div>
                     </div>
@@ -4000,6 +4105,11 @@ ahcollege@gmail.com</p>
                             <input type="text" id="profileBMI" readonly placeholder="স্বয়ংক্রিয় গণনা হবে" style="background-color: #f8f9fa;">
                         </div>
                     </div>
+                    <div class="deepo-image-container">
+    <img src="https://i.imgur.com/8zLDkcy.png" alt="Registration Modal Visual" class="deepo-image">
+    <br>
+</div>
+
 
                     <div style="display: flex; gap: 15px;">
                         <button type="submit" class="submit-btn" style="flex: 1;">
@@ -5486,7 +5596,45 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
   </script>  
-    
+  
+  <!-- BMI image -->
+<script>
+/* Lightbox open */
+function openImageModal(imageUrl) {
+    const modal = document.getElementById('imageDisplayModal');
+    const modalImg = document.getElementById("deepoImageContent");
+
+    if (modal && modalImg) {
+        modal.style.display = "block";
+        modalImg.src = imageUrl;
+    }
+}
+
+/* Generic modal close */
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+/* Image download */
+function downloadImage(imageUrl, fileName) {
+    fetch(imageUrl, { mode: 'cors' })
+        .then(response => response.blob())
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+        })
+        .catch(() => alert('ইমেজ ডাউনলোড করা যাচ্ছে না।'));
+}
+</script>
     
 </body>
 </html>
